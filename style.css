@@ -612,9 +612,10 @@ h2.title{
 /* PRODUCTOS ACHICADOS */
 
 .products-grid{
-  grid-template-columns:repeat(2,1fr);
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
   gap:25px;
-  justify-items:center;
+  margin-top:50px;
 }
 
 .product-card{
