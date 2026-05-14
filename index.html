@@ -285,38 +285,28 @@
   <div class="gallery-grid">
 
     <div class="gallery-item">
-      <img src="imagenes/1.jpg" onclick="abrirImagen(this.src)">
+      <img src="imagenes/1.jpg">
     </div>
 
     <div class="gallery-item">
-      <img src="imagenes/3.jpg" onclick="abrirImagen(this.src)">
+      <img src="imagenes/3.jpg">
     </div>
 
     <div class="gallery-item">
-      <img src="imagenes/4.jpg" onclick="abrirImagen(this.src)">
+      <img src="imagenes/4.jpg">
     </div>
 
     <div class="gallery-item">
-      <img src="imagenes/5.jpg" onclick="abrirImagen(this.src)">
+      <img src="imagenes/5.jpg">
     </div>
 
     <div class="gallery-item">
-      <img src="imagenes/6.jpg" onclick="abrirImagen(this.src)">
+      <img src="imagenes/6.jpg">
     </div>
 
   </div>
 
 </section>
-
-<div id="visor">
-
-  <span id="cerrar" onclick="cerrarImagen()">
-    ✕
-  </span>
-
-  <img id="imagen-grande">
-
-</div>
 
 <div class="red-line"></div>
 
@@ -615,7 +605,7 @@
         </div>
 
         Llena todos los campos para reclamar tu promoción
-
+  
       </div>
 
     </div>
@@ -640,22 +630,7 @@
       <textarea id="mensaje"
                 placeholder="¿En qué podemos ayudarte?"
                 required></textarea>
-
-      <p id="mensaje-error"
-         style="display:none; color:#ff2a2a; font-weight:bold; margin-bottom:15px;">
-
-         ⚠ Debes llenar todos los campos para reclamar la promoción.
-
-      </p>
-
-      <p id="mensaje-ok"
-         style="display:none; color:#25d366; font-weight:bold; margin-bottom:15px;">
-
-         ✅ Datos completos. Ahora puedes continuar por WhatsApp.
-
-      </p>
-
-      <button type="submit">
+<button type="submit">
         Enviar inscripción
       </button>
 
@@ -834,86 +809,6 @@
   </div>
 
 </footer>
-
-<script>
-
-function abrirImagen(src){
-
-  const visor = document.getElementById("visor");
-
-  const imagenGrande = document.getElementById("imagen-grande");
-
-  visor.style.display = "flex";
-
-  imagenGrande.src = src;
-}
-
-function cerrarImagen(){
-
-  document.getElementById("visor").style.display = "none";
-}
-
-document.getElementById("visor").addEventListener("click", function(e){
-
-  if(e.target.id === "visor"){
-
-    cerrarImagen();
-  }
-});
-
-document.addEventListener("keydown", function(e){
-
-  if(e.key === "Escape"){
-
-    cerrarImagen();
-  }
-});
-
-const formulario = document.getElementById("formulario-promocion");
-
-formulario.addEventListener("submit", function(e){
-
-  e.preventDefault();
-
-  const nombre = document.getElementById("nombre");
-
-  const correo = document.getElementById("correo");
-
-  const telefono = document.getElementById("telefono");
-
-  const mensaje = document.getElementById("mensaje");
-
-  const mensajeError = document.getElementById("mensaje-error");
-
-  const mensajeOk = document.getElementById("mensaje-ok");
-
-  if(
-    nombre.value.trim() === "" ||
-    correo.value.trim() === "" ||
-    telefono.value.trim() === "" ||
-    mensaje.value.trim() === ""
-  ){
-
-    mensajeError.style.display = "block";
-
-    mensajeOk.style.display = "none";
-
-  }else{
-
-    mensajeError.style.display = "none";
-
-    mensajeOk.style.display = "block";
-
-    setTimeout(function(){
-
-      window.open("https://wa.me/593982080543", "_blank");
-
-    }, 1000);
-  }
-
-});
-
-</script>
 
 </body>
 </html>
